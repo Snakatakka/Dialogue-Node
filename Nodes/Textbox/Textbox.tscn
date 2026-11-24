@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cmaxwmpea2mrc"]
+
+[ext_resource type="Script" uid="uid://ds4ti62bisjb8" path="res://Nodes/Textbox/Textbox.gd" id="1_7gbvf"]
+
+[node name="Textbox" type="CanvasLayer" unique_id=1737538765]
+script = ExtResource("1_7gbvf")
+
+[node name="Full" type="MarginContainer" parent="." unique_id=1868498494]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="Full" unique_id=285483332]
+clip_contents = true
+layout_mode = 2
+
+[node name="OuterMargin" type="MarginContainer" parent="Full" unique_id=705566996]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = -56
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="InnerMargin" type="MarginContainer" parent="Full/OuterMargin" unique_id=847850225]
+layout_mode = 2
+theme_override_constants/margin_top = 64
+
+[node name="Dialogue" type="RichTextLabel" parent="Full/OuterMargin/InnerMargin" unique_id=218036474]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "This is what the character is saying."
+scroll_active = false
+
+[node name="CharacterName" type="RichTextLabel" parent="Full/OuterMargin" unique_id=2095699567]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+text = "Character's Name"
+fit_content = true
+
+[node name="Timer" type="Timer" parent="." unique_id=1983823969]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
